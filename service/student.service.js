@@ -10,7 +10,7 @@ const signup = async (req, res) => {
         `select * from students where email=$1 or mobile=$2`,
         [email, mobile]
       );
-      //   console.log(isstudentPresnt);
+        console.log(isstudentPresnt);
       if (isstudentPresnt.rows.length > 0) {
         resolve({
           message: "student is already Registered ",
