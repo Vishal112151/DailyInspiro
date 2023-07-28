@@ -1,8 +1,9 @@
 var nodemailer = require('nodemailer');
 const quotes=require("../motivationalQuotes/Education.quote")
 const users = require("../usersEmails");
-const sendEmail = async(req, res) => {
+const sendEmail = async(time) => {
   return new Promise(async (resolve, reject) => {
+    console.log("Scheduled at : ",time);
     try {
       console.log("usres : ",users);
         let transporter = nodemailer.createTransport({

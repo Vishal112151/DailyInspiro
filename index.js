@@ -23,7 +23,9 @@ app.use('/',sendWhatsappRouter);
  
 const date = new Date(2012, 11, 21, 5, 30, 0);
 
-// const job = schedule.scheduleJob('*/1 * * * *', sendEmailService.sendEmail);
+// const job = schedule.scheduleJob('*/1 * * * *', sendEmailService.sendEmail);//this is for every min
+
+const job = schedule.scheduleJob('00 10 * * *', sendEmailService.sendEmail);//this is for a certain time at every day
 
 
 app.listen(port, (req, res) => {
